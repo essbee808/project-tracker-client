@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import ProjectsForm from './ProjectsForm';
 
 class ProjectsContainer extends Component {
     render() {
         return (
             <div>
-                Projects Container
+                <h1>Projects Container</h1>
+                <ProjectsForm />
             </div>
         );
     }
