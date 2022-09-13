@@ -12,19 +12,16 @@ class CategoriesContainer extends Component {
     }
 
     render() {
-        // const categoriesLis = this.props.categories.map((category) => {
-        //     return (<li key={category.id}>
-        //         <Link to={`/categories/${category.id}`} state={{ name: category.name, category_id: category.id }}>{category.name}</Link>
-        //     </li>)
-        // })
+       
         return (
             <div>
                 {console.log("Categories Container Return")}
                <h1>Categories</h1>
                <ul>
-                  {this.props.categories.map((category) => {
+                  {this.props.categories?.map((category) => {
                     return <li key={category.id}>
                         <Link to={`/categories/${category.id}`} state={{ name: category.name, category_id: category.id}}>{category.name}</Link>
+                        
                     </li>
                   })}
               </ul>

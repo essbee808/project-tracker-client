@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {fetchProjects, addProject} from '../actions/projectsActions';
+import {addProject} from '../actions/projectsActions';
+import { fetchCategory} from '../actions/categoriesActions';
 
 import ProjectsForm from './ProjectsForm';
 import Project from './Project';
-import Projects from './Project';
+// import Projects from './Project';
 
 class ProjectsContainer extends Component {
 
     componentDidMount() {
-        this.props.fetchProjects();
+        this.props.fetchCategory(this.props.category_id);
     }
 
     render() {
         console.log("Rendering Projects Container")
-        const projectsLis = this.props.projects.map((project, index) => {
-            return <li key={index}><Project {...project}/></li>
-        })
+
         return (
             
-            <div>
+            <div class="lists">
                 <ProjectsForm addProject={this.props.addProject} category_id={this.props.category_id}/>
-                <ul>
-                  {projectsLis}
-             
+                <ul class="nes-list is-circle">
+                  {this.props.projects?.map((project) => {
+                    return <li key={project.id}>{project.name}</li>
+                })}
+                    
                 </ul>
                 
             </div>
@@ -32,15 +33,15 @@ class ProjectsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log("Projects state:", state)
-    debugger
+    console.log("Projects Container State:", state)
+
     return {
-        projects: state.projects,
+        projects: state.categories.projects
     }
 }
 
 const mapDispatchToProps = {
-    fetchProjects,
+    fetchCategory,
     addProject
 }
 
