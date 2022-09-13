@@ -12,8 +12,8 @@ import ProjectsContainer from '../components/ProjectsContainer';
 const Router = () => {
     return (
        <Routes>
-         <Route path="/categories/:id" element={<CategoryShow />}/>
-         <Route path="/categories" element={<CategoriesContainer/>}/>
+         <Route path="/categories/:id" element={<CategoryContainer />}/>
+         <Route path="/categories/*" element={<CategoriesContainer/>}/>
          <Route exact path="/" element={<Home/>}/>
          <Route path="/about" element={<About/>}/>
          <Route path="/contact" element={<Contact/>}/>

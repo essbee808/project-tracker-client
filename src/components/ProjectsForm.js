@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-// import { addProject } from '../actions/projectsActions';
-import {connect} from 'react-redux';
-import {useParams} from 'react-router-dom'
 
 class ProjectsForm extends Component {
-    
+
     state = {
         name: '',
         objective: '',
@@ -25,22 +22,22 @@ class ProjectsForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        
+    
         this.props.addProject({
             name: this.state.name,
             objective: this.state.objective,
             why: this.state.why,
             learn: this.state.learn,
-            category_id: id
+            category_id: this.props.id
         });
-        debugger
+  
     }
     
     render() {
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit}>
-                    <label>New Project Idea: </label>
+                    <label>Add New Project Idea: </label>
                     <br/>
                     <label>Name: </label>
                     <input
@@ -77,6 +74,4 @@ class ProjectsForm extends Component {
     }
 }
 
-
-
-export default connect()(ProjectsForm);
+export default ProjectsForm;
