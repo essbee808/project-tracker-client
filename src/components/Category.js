@@ -1,20 +1,18 @@
 import React from 'react';
-import {useParams, useLocation} from 'react-router-dom';
-import ProjectsForm from './ProjectsForm';
+import {useLocation} from 'react-router-dom';
+import ProjectsContainer from './ProjectsContainer';
 
-const Category = (props) => {
-  const { id } = useParams();
+const Category = () => {
+
   const location = useLocation();
-  const { name } = location.state;
-
-    return (
-        <>
-          <div className="content">
-            <h1>{name}</h1>
-            <ProjectsForm addProject={props.addProject} category_id={id}/>
-          </div>
-        </>
-    );
+  const {name, category_id} = location.state;
+  
+  return (
+    <div>
+      <h1>{name}</h1>
+      <ProjectsContainer category_id={category_id}/>
+    </div>
+  );
 };
 
 export default Category;

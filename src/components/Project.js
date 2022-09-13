@@ -1,10 +1,19 @@
 import React from 'react';
 
-const Project = () => {
+const Project = (props) => {
+    const {name, objective, why, learn} = props
+
     return (
-        <div>
-            Rendering a single project...
-        </div>
+        <>
+            <h3>{name}</h3>
+                <br/>
+                <p>Objective: {objective}</p>
+                <br/>
+                <p>Why: {why}</p>
+                <br/>
+                <p>What to learn: {learn}</p>
+                <br/>
+        </>
     );
 };
 
