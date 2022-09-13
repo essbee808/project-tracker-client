@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import Category from './Category';
-import {Link} from 'react-router-dom';
+import CategoryShow from './CategoryShow';
+import {Routes, Route, Link} from 'react-router-dom';
 
 class CategoriesList extends Component {
 
     render() {
         const {categories} = this.props;
+        const categoriesLis = categories.map((category) => {
+            return (
+                <li key={category.id}>
+                    <Link to={`/categories/${category.id}`}>{category.name}</Link>
+                </li>
+            )
+        })
+
         return (
             <div>
                 <ul>
-                    {categories.map((category) => {
+                    {categoriesLis}
+                    {/* {categories.map((category) => {
                         return (
                         //   <li key={category.id}>{category.name}</li>
-                        <Link to={`/categories/${category.id}`}>{category.name}</Link>
-                    )})}
+                        <li key={category.id}>
+                            <Link to={`/categories/${category.id}`} >{category.name}</Link>
+                        </li>
+                        
+                    )})} */}
                 </ul> 
+                
             </div>
         );
     }

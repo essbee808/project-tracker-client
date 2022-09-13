@@ -6,7 +6,7 @@ class ProjectsContainer extends Component {
         return (
             <div>
                 <h1>Projects Container</h1>
-                <ProjectsForm />
+                {/* <ProjectsForm /> */}
             </div>
         );
     }

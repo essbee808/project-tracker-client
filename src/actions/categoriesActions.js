@@ -5,3 +5,4 @@ export const fetchCategories = () => {
         .then((responseCategories) => dispatch({type: 'FETCH_CATEGORIES', payload: responseCategories}))
     }
 }
+
