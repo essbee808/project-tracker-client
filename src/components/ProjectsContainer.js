@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ProjectsForm from './ProjectsForm';
 
 class ProjectsContainer extends Component {
 

@@ -4,7 +4,8 @@ import {Routes, Route} from 'react-router-dom';
 import Home from '../components/Home';
 import About from '../components/About';
 import Contact from '../components/Contact';
-import CategoryShow from './CategoryShow';
+import CategoryShow from './Category';
+import CategoryContainer from './CategoryContainer';
 
 import CategoriesContainer from '../components/CategoriesContainer';
 import ProjectsContainer from '../components/ProjectsContainer';

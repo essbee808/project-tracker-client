@@ -4,6 +4,7 @@ export const projectsReducer = (state = [], action) => {
             return action.payload
         
         case 'ADD_PROJECT':
+            debugger
             return state;
         
         default:

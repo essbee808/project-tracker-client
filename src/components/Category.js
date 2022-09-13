@@ -11,7 +11,7 @@ const Category = (props) => {
         <>
           <div className="content">
             <h1>{name}</h1>
-            <ProjectsForm category_id={id}/>
+            <ProjectsForm addProject={props.addProject} category_id={id}/>
           </div>
         </>
     );

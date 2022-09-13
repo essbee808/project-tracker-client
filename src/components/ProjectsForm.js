@@ -6,7 +6,8 @@ class ProjectsForm extends Component {
         name: '',
         objective: '',
         why: '',
-        learn: ''
+        learn: '', 
+        category_id: parseInt(this.props.category_id)
     }
 
     handleOnChange = (event) => {
@@ -22,13 +23,13 @@ class ProjectsForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-    
+       
         this.props.addProject({
             name: this.state.name,
             objective: this.state.objective,
             why: this.state.why,
             learn: this.state.learn,
-            category_id: this.props.id
+            category_id: this.state.category_id
         });
   
     }

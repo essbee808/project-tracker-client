@@ -6,10 +6,17 @@ export const fetchProjects = () => {
     }
 }
 
-// export const addProject = (project) => {
-//     return dispatch => {
-//         debugger
-//         fetch('http://localhost:3000/')
-//     }
-// }
+export const addProject = (project) => {
+    debugger
+    return (dispatch) => {
+        debugger
+        fetch(`http://localhost:3000/projects`, {
+            method: 'POST',
+            body: JSON.stringify(project),
+            headers: {'Content-Type' : 'application/json'}
+        })
+        .then(resp => resp.json())
+        .then(project => console.log("Returned project", project))
+    }
+}
 
