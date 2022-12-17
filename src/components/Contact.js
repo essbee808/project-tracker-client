@@ -5,11 +5,11 @@ const Contact = () => {
         <div>
             <h1>Contact Info</h1>
             <span>
-                <a href="https://www.linkedin.com/in/sheena-bonilla/" target="_blank"><i class="nes-icon linkedin is-large"></i></a>
+                <a href="https://www.linkedin.com/in/sheena-bonilla/" target="_blank"><i className="nes-icon linkedin is-large"></i></a>
             </span>
             <br/>
             <span>
-                <a href="https://github.com/essbee808" target="_blank"><i class="nes-icon github is-large"></i></a>
+                <a href="https://github.com/essbee808" target="_blank"><i className="nes-icon github is-large"></i></a>
             </span>
         </div>
     );

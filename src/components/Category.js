@@ -9,7 +9,7 @@ const Category = () => {
   
   return (
     <div>
-      <h1>{name}</h1>
+      <h1 className="nes-text is-primary">Category: {name}</h1>
       <ProjectsContainer category_id={category_id}/>
     </div>
   );

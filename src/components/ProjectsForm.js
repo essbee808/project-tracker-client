@@ -15,7 +15,7 @@ class ProjectsForm extends Component {
         // create dynamic key name in the object
         // merge state 
         this.setState({
-            ...this.state,
+            // ...this.state,
             [event.target.name]: value
         });
     }
@@ -24,13 +24,7 @@ class ProjectsForm extends Component {
         event.preventDefault();
   
         this.props.addProject(this.state);
-        // this.props.addProject({
-        //     name: this.state.name,
-        //     objective: this.state.objective,
-        //     why: this.state.why,
-        //     learn: this.state.learn,
-        //     category_id: this.state.category_id
-        // });
+      
         this.setState({
             name: '',
             objective: '',
@@ -44,14 +38,17 @@ class ProjectsForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit}>
-                    <label>Add New Project Idea: </label>
+                    <h2>Add New Project Idea: </h2>
                     <br/>
+
                     <label>Name: </label>
                     <input
                         type="text"
                         value={this.state.name}
                         name="name"
-                        onChange={this.handleOnChange}/>
+                        onChange={this.handleOnChange}
+                    />
+
                     <br/>
                     <label>Objective: </label>
                     <input

@@ -5,7 +5,6 @@ import { fetchCategory} from '../actions/categoriesActions';
 
 import ProjectsForm from './ProjectsForm';
 import Project from './Project';
-// import Projects from './Project';
 
 class ProjectsContainer extends Component {
 
@@ -14,15 +13,13 @@ class ProjectsContainer extends Component {
     }
 
     render() {
-        console.log("Rendering Projects Container")
-
         return (
             
-            <div class="lists">
+            <div>
                 <ProjectsForm addProject={this.props.addProject} category_id={this.props.category_id}/>
-                <ul class="nes-list is-circle">
+                <ul>
                   {this.props.projects?.map((project) => {
-                    return <li key={project.id}>{project.name}</li>
+                    return <li key={project.id}><Project {...project}/></li>
                 })}
                     
                 </ul>
